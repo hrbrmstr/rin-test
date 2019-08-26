@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,27 @@
 		012D7DD2231416110083A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012D7DD1231416110083A67E /* Assets.xcassets */; };
 		012D7DD5231416110083A67E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012D7DD4231416110083A67E /* Preview Assets.xcassets */; };
 		012D7DD8231416110083A67E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012D7DD6231416110083A67E /* Main.storyboard */; };
+		012D7DEF2314182D0083A67E /* rin-test-main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 012D7DED2314182D0083A67E /* rin-test-main.mm */; };
+		012D7DF02314188C0083A67E /* libR.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 012D7DE5231417F80083A67E /* libR.dylib */; };
+		012D7DF12314188C0083A67E /* libR.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 012D7DE5231417F80083A67E /* libR.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		012D7DF32314189A0083A67E /* libRInside.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 012D7DE9231418080083A67E /* libRInside.dylib */; };
+		012D7DF42314189A0083A67E /* libRInside.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 012D7DE9231418080083A67E /* libRInside.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		012D7DF22314188C0083A67E /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				012D7DF12314188C0083A67E /* libR.dylib in Embed Libraries */,
+				012D7DF42314189A0083A67E /* libRInside.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		012D7DCA2314160F0083A67E /* rin-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rin-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +43,13 @@
 		012D7DD7231416110083A67E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		012D7DD9231416110083A67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		012D7DDA231416110083A67E /* rin_test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rin_test.entitlements; sourceTree = "<group>"; };
+		012D7DE1231417830083A67E /* libR.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libR.dylib; path = ../../../../Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libR.dylib; sourceTree = "<group>"; };
+		012D7DE5231417F80083A67E /* libR.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libR.dylib; path = ../../../../Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libR.dylib; sourceTree = "<group>"; };
+		012D7DE9231418080083A67E /* libRInside.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRInside.dylib; path = ../../../../Library/Frameworks/R.framework/Versions/3.6/Resources/library/RInside/lib/libRInside.dylib; sourceTree = "<group>"; };
+		012D7DEC2314182D0083A67E /* rin-test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rin-test-Bridging-Header.h"; sourceTree = "<group>"; };
+		012D7DED2314182D0083A67E /* rin-test-main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "rin-test-main.mm"; sourceTree = "<group>"; };
+		012D7DEE2314182D0083A67E /* rin-test-main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "rin-test-main.hpp"; sourceTree = "<group>"; };
+		012D7DF6231426DA0083A67E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012D7DF02314188C0083A67E /* libR.dylib in Frameworks */,
+				012D7DF32314189A0083A67E /* libRInside.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,8 +68,11 @@
 		012D7DC12314160F0083A67E = {
 			isa = PBXGroup;
 			children = (
-				012D7DCC2314160F0083A67E /* rin-test */,
+				012D7DF6231426DA0083A67E /* README.md */,
+				012D7DF5231426700083A67E /* rin-bridge-code */,
+				012D7DCC2314160F0083A67E /* rin-swift */,
 				012D7DCB2314160F0083A67E /* Products */,
+				012D7DE0231417830083A67E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,18 +84,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		012D7DCC2314160F0083A67E /* rin-test */ = {
+		012D7DCC2314160F0083A67E /* rin-swift */ = {
 			isa = PBXGroup;
 			children = (
 				012D7DCD2314160F0083A67E /* AppDelegate.swift */,
 				012D7DCF2314160F0083A67E /* ContentView.swift */,
+				012D7DD9231416110083A67E /* Info.plist */,
 				012D7DD1231416110083A67E /* Assets.xcassets */,
 				012D7DD6231416110083A67E /* Main.storyboard */,
-				012D7DD9231416110083A67E /* Info.plist */,
 				012D7DDA231416110083A67E /* rin_test.entitlements */,
 				012D7DD3231416110083A67E /* Preview Content */,
 			);
-			path = "rin-test";
+			path = "rin-swift";
 			sourceTree = "<group>";
 		};
 		012D7DD3231416110083A67E /* Preview Content */ = {
@@ -72,6 +104,26 @@
 				012D7DD4231416110083A67E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		012D7DE0231417830083A67E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				012D7DE9231418080083A67E /* libRInside.dylib */,
+				012D7DE5231417F80083A67E /* libR.dylib */,
+				012D7DE1231417830083A67E /* libR.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		012D7DF5231426700083A67E /* rin-bridge-code */ = {
+			isa = PBXGroup;
+			children = (
+				012D7DEC2314182D0083A67E /* rin-test-Bridging-Header.h */,
+				012D7DEE2314182D0083A67E /* rin-test-main.hpp */,
+				012D7DED2314182D0083A67E /* rin-test-main.mm */,
+			);
+			path = "rin-bridge-code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +136,7 @@
 				012D7DC62314160F0083A67E /* Sources */,
 				012D7DC72314160F0083A67E /* Frameworks */,
 				012D7DC82314160F0083A67E /* Resources */,
+				012D7DF22314188C0083A67E /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -106,11 +159,12 @@
 				TargetAttributes = {
 					012D7DC92314160F0083A67E = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
 			buildConfigurationList = 012D7DC52314160F0083A67E /* Build configuration list for PBXProject "rin-test" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -147,6 +201,7 @@
 			files = (
 				012D7DD02314160F0083A67E /* ContentView.swift in Sources */,
 				012D7DCE2314160F0083A67E /* AppDelegate.swift in Sources */,
+				012D7DEF2314182D0083A67E /* rin-test-main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,21 +336,34 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "rin-test/rin_test.entitlements";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "rin-swift/rin_test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"rin-test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"rin-swift/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "rin-test/Info.plist";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/Library/Frameworks/R.framework/Headers/,
+					/Library/Frameworks/R.framework/Versions/3.6/Resources/library/RInside/include/,
+					/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/,
+				);
+				INFOPLIST_FILE = "rin-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/R.framework/Versions/3.6/Resources/lib",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/R.framework/Versions/3.6/Resources/library/RInside/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "is.rud.bob.rin-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rin-bridge-code/rin-test-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -304,21 +372,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "rin-test/rin_test.entitlements";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "rin-swift/rin_test.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"rin-test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"rin-swift/Preview Content\"";
 				DEVELOPMENT_TEAM = CBY22P58G8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "rin-test/Info.plist";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/Library/Frameworks/R.framework/Headers/,
+					/Library/Frameworks/R.framework/Versions/3.6/Resources/library/Rcpp/include/,
+					/Library/Frameworks/R.framework/Versions/3.6/Resources/library/RInside/include/,
+				);
+				INFOPLIST_FILE = "rin-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/R.framework/Versions/3.6/Resources/lib",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/R.framework/Versions/3.6/Resources/library/RInside/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "is.rud.bob.rin-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "rin-bridge-code/rin-test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
